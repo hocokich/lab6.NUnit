@@ -10,7 +10,7 @@ namespace lab6.NUnit
     {
         public int Convert(float num, string unit)
         {
-            if (num <= 0 ) throw new ArgumentException("Число должно быть > 0");
+            if (num <= 0 && num <= float.MaxValue) throw new ArgumentException("Число должно быть > 0 < MaxValue");
 
             if (unit == "inch")
                 return (int)(num * 2.5);

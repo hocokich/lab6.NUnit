@@ -17,7 +17,6 @@ namespace lab6.NUnit
         public void TestConvert()
         {
             //Тест функции конвертации
-
             // получение исключения
             var exception = Assert.Throws<ArgumentException>(() => u.Convert(10, "qwerty"));
             // сравнение полученного сообщения с ожидаемым
@@ -25,7 +24,7 @@ namespace lab6.NUnit
             // получение исключения отрицательного числа
             var exception2 = Assert.Throws<ArgumentException>(() => u.Convert(-2, "cm"));
             // сравнение полученного сообщения с ожидаемым
-            Assert.That(exception2.Message, Is.EqualTo("Число должно быть > 0"));
+            Assert.That(exception2.Message, Is.EqualTo("Число должно быть > 0 < MaxValue"));
 
             Assert.AreEqual(25, u.Convert(10, "inch"));
             Assert.AreEqual(4, u.Convert(10, "cm"));
